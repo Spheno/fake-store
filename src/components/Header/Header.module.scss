@@ -1,0 +1,175 @@
+@import '../../styles/constants.scss';
+
+.header {
+  max-width: 1280px;
+  min-width: 320px;
+  width: 100%;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  border-bottom: solid 1px $colorBorder;
+
+  @media (min-width: $breakpointTablet) {
+    padding: 20px 30px;
+  }
+}
+
+.containerLogo {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 25px;
+  line-height: 1.5;
+  font-weight: 500;
+  font-family: $logoFont;
+  z-index: 1;
+}
+
+.logo {
+  position: relative;
+  border-radius: 30%;
+  width: 30px;
+  height: 10px;
+  border-right: 1px solid $colorLogo-1;
+  border-left: 1px solid $colorLogo-1;
+
+  &::before,
+  &::after {
+    content: "";
+    border-radius: 30%;
+    width: 30px;
+    height: 10px;
+    display: block;
+    border-right: 1px solid $colorLogo-1;
+    border-left: 1px solid $colorLogo-1;
+  }
+
+  &::after {
+    transform: rotate(60deg);
+  }
+
+  &::before {
+    transform: rotate(-60deg);
+    position: absolute;
+  }
+
+}
+
+.logoEl {
+  background-color: $colorLogo-2;
+  border: 1px solid $colorLogo-3;
+  width: 8px;
+  height: 8px;
+  border-radius: 10px;
+  position: absolute;
+  left: calc(50% - 3px);
+  top: 1px;
+  z-index: 1;
+  opacity: 1;
+
+  &::after {
+    content: "";
+    width: 25px;
+    height: 25px;
+    border-radius: 30px 0;
+    background-color: $colorLogo-2;
+    display: block;
+    position: absolute;
+    right: -150px;
+    top: -10px;
+  }
+
+  &::before {
+    content: "";
+    width: 145px;
+    height: 150px;
+    border-radius: 30px 0;
+    border-bottom: 1px solid $colorLogo-3;
+    display: block;
+    position: absolute;
+    left: 15px;
+    top: -135px;
+    z-index: 1;
+  }
+}
+
+.containerCart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
+}
+
+.cart {
+  font-size: 20px;
+  color: black;
+
+  @media (min-width: $breakpointTablet) {
+    font-size: 30px;
+  }
+}
+
+.counterText {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.5px;
+}
+
+.counter {
+position: absolute;
+width: 15px;
+height: 10px;
+background-color: $colorLogo-2;
+border-radius: 20px;
+display: flex;
+align-items: center;
+justify-content: center;
+top: -5px;
+}
+
+.burger {
+  z-index: 5;
+  display: block;
+  cursor: pointer;
+  position: relative;
+  width: 20px;
+  height: 15px;
+
+  &::after,
+  &::before,
+  .burgerSpan {
+    content: "";
+    left: 0;
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    background-color: black;
+    transition: all 0.3s ease 0s;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  .burgerSpan {
+    top: 50%;
+    transform: scale(1) translate(0px, -50%);
+  }
+
+  @media (min-width: $breakpointTablet) {
+    width: 30px;
+    height: 20px;
+  }
+}

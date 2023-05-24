@@ -1,0 +1,82 @@
+@import '../../styles/constants.scss';
+
+.productCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px;
+  max-width: 135px;
+  width: 100%;
+  border: 1px solid $colorLogo-2;
+
+  @media (min-width: $breakpointTablet) {
+    gap: 15px;
+    max-width: 250px;
+  }
+}
+
+.containerImg {
+  width: 100%;
+  padding: 40%;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.containerInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.productName {
+  @extend %TextH3;
+  height: 29px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+  @media (min-width: $breakpointTablet) {
+    height: 33px;
+  }
+}
+
+.productRating {
+  @extend %text_s;
+  color: $colorLogo-1;
+  margin-bottom: 15px;
+}
+
+.containerButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.productPrice {
+  @extend %text_m;
+  color: $colorLogo-3;
+}
+
+.buttonAdd {
+  border: 1px solid $colorLogo-3;
+  border-radius: 2px;
+  padding: 5px 10px;
+  background-color: $colorLogo-3;
+  color: $colorBackground;
+  @extend %text_s;
+
+  @media (min-width: $breakpointTablet) {
+    padding: 5px 15px;
+  }
+}

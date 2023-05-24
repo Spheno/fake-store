@@ -1,0 +1,34 @@
+@import '../../styles/constants.scss';
+
+.cart {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+}
+
+.productList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.productName {
+  @extend %TextH3;
+}
+
+.productPrice {
+  @extend %text_m;
+  color: $colorLogo-3;
+}
